@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 10:27:36 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/25 10:41:55 by amzaidi          ###   ########.fr       */
+/*   Created: 2024/04/25 12:37:11 by amzaidi           #+#    #+#             */
+/*   Updated: 2024/04/25 12:42:11 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *word)
+int ft_tolower( int c )
 {
-	int	i;
+	if(c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
+}
 
-	i = 0;
-	while (word[i])
-		i++;
-	return (i);
+int	main()
+{
+	printf("%c",ft_tolower('5'));
 }

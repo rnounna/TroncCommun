@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 10:27:36 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/25 10:41:55 by amzaidi          ###   ########.fr       */
+/*   Created: 2024/04/25 10:29:33 by amzaidi           #+#    #+#             */
+/*   Updated: 2024/04/25 14:44:32 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_H
+#define LIBFT_H
 
-int	ft_strlen(const char *word)
-{
-	int	i;
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
+//#include <stdLib.h>
 
-	i = 0;
-	while (word[i])
-		i++;
-	return (i);
-}
+char    *ft_strdup(char *src);
+char    *ft_strcpy(char *dest, char *src);
+int	ft_strlen(const char *word);
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
+
+#endif

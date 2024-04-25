@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 10:27:36 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/25 10:41:55 by amzaidi          ###   ########.fr       */
+/*   Created: 2024/04/25 14:34:44 by amzaidi           #+#    #+#             */
+/*   Updated: 2024/04/25 14:53:19 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *word)
+char	*ft_strdup(char *src)
 {
-	int	i;
+	char	*dest;
+	int		i;
 
-	i = 0;
-	while (word[i])
-		i++;
-	return (i);
+	i = ft_strlenn(src);
+	dest = malloc(sizeof * dest * (i + 1));
+	ft_strlcpy(dest, src,i + 1);
+	return (dest);
+}
+
+int	main()
+{
+	char *dest;
+	dest = ft_strdup("amine est bete");
+	printf("%s",dest);
 }

@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 10:27:36 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/25 10:41:55 by amzaidi          ###   ########.fr       */
+/*   Created: 2024/04/25 12:31:46 by amzaidi           #+#    #+#             */
+/*   Updated: 2024/04/25 12:43:12 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *word)
+int	ft_toupper(int c)
 {
-	int	i;
-
-	i = 0;
-	while (word[i])
-		i++;
-	return (i);
+	if(c >= 'a' && c <= 'z')
+		return (c - 32);
+	return c;
 }
+
+int	main()
+{
+	printf("%c",ft_toupper('a'));
+}
+
