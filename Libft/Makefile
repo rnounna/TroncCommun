@@ -1,7 +1,38 @@
-CFLAGS = 
+SRCS = ft_bzero.c\
+      ft_isdigit.c\
+      ft_memset.c\
+      ft_strlcpy.c\
+      ft_isalnum.c\
+      ft_isprint.c\
+      ft_strchr.c\
+      ft_strlen.c\
+      ft_isalpha.c\
+      ft_memcpy.c\
+      ft_strdup.c\
+      ft_tolower.c\
+      ft_isascii.c\
+      ft_memmove.c\
+      ft_strlcat.c\
+      ft_toupper.c\
+      ft_strdup.c\
+      ft_strchr.c\
 
-all: final
+CC = cc
+RM = rm -f
+FLAGS = -Wall -Wextra -Werror
+NAME = libft.a
+OBJS = $(SRCS:.c=.o)
 
-final: 
+.c.o:
+	$(CC) $(FLAGS) -c $< -o $(<:.c=.o)
 
-ar:  
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
+
+all: $(NAME)
+
+clean:
+	$(RM) $(OBJS)
+
+fclean: clean
+	$(RM) $(NAME)

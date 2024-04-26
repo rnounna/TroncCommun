@@ -5,21 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/25 12:37:11 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/25 12:42:11 by amzaidi          ###   ########.fr       */
+/*   Created: 2024/04/26 14:53:51 by amzaidi           #+#    #+#             */
+/*   Updated: 2024/04/26 14:58:03 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_tolower( int c )
+int	ft_tolower(int c)
 {
-	if(c >= 'A' && c <= 'Z')
+	if (c >= 'A' && c <= 'Z')
 		return (c + 32);
 	return (c);
 }
-
+/*
 int	main()
 {
 	printf("%c",ft_tolower('5'));
-}
+}*/

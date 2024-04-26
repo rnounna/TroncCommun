@@ -5,27 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/25 12:46:07 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/25 14:18:19 by amzaidi          ###   ########.fr       */
+/*   Created: 2024/04/26 14:51:14 by amzaidi           #+#    #+#             */
+/*   Updated: 2024/04/26 16:47:49 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr( const char * string, int searchedChar )
+char	*ft_strchr(const char *string, int searchedChar)
 {
 	int	i;
-	int	j;
-
-	j = ft_strlen(string);
+	char *retour;
+	//retour = ft_strdup(string[j]);
 	i = 0;
-	while(string[i])
+	//retour = ft_strdup((char*)string);
+	while (string[i++])
 	{
 		if (string[i] == searchedChar)
-			return (&string[i]);
-		i++;
+			break;
 	}
-	return (&string[i]);
+	retour = ft_strdup((char*)string + i);
+	return (retour);
 }
 
 int	main()

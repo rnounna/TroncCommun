@@ -5,12 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 10:44:21 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/25 09:58:21 by amzaidi          ###   ########.fr       */
+/*   Created: 2024/04/26 14:50:02 by amzaidi           #+#    #+#             */
+/*   Updated: 2024/04/26 19:08:11 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+#include "libft.h"
+
+unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -29,30 +31,14 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	return (j);
 }
 
-#include <stdio.h>
-#include <string.h>
+int main() {
 
-void test(int size)
-{
-    char string[] = "Hello there, Venus";
-    char buffer[19];
-    int r;
+    const char *src = "amine";
+    char *dest;
+    size_t size;
 
-    r = ft_strlcpy(buffer,string,size);
-
-    printf("Copied '%s' into '%s', length %d\n",
-            string,
-            buffer,
-            r
-          );
-}
-
-int main()
-{
-    test(19);
-    test(10);
-    test(1);
-    test(0);
-
-    return(0);
+    size = ft_strlen(src) + 1;
+    dest = (char *) malloc(size);
+    ft_strlcpy(dest, src,size);
+    printf("your name is : %s",dest);
 }

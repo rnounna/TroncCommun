@@ -5,17 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 09:47:37 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/22 10:48:12 by amzaidi          ###   ########.fr       */
+/*   Created: 2024/04/26 14:52:42 by amzaidi           #+#    #+#             */
+/*   Updated: 2024/04/26 15:54:28 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-#include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
+#include "libft.h"
 
 int	ft_isalpha(int n)
 {

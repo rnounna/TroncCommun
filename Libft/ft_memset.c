@@ -5,27 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 10:29:58 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/25 14:59:58 by amzaidi          ###   ########.fr       */
+/*   Created: 2024/04/26 14:48:23 by amzaidi           #+#    #+#             */
+/*   Updated: 2024/04/26 15:56:01 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset( void * pointer, int value, size_t count )
+void	*ft_memset(void *pointer, int value, size_t count)
 {
 	size_t	i;
-	i = 0;
 
+	i = 0;
 	while (i < count)
 	{
-		((char *) pointer)[i] = ( char)value;
+		((char *) pointer)[i] = (char)value;
 		i++;
 	}
-	return pointer;	
+	return (pointer);	
 }
 
-/*
 int main() {
 
     int array [] = { 1, 2, 3, 4, 5 };
@@ -49,4 +48,4 @@ int main() {
 
     return 0;
 }
-*/
+

@@ -5,10 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 10:19:03 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/22 10:21:13 by amzaidi          ###   ########.fr       */
+/*   Created: 2024/04/26 14:54:09 by amzaidi           #+#    #+#             */
+/*   Updated: 2024/04/26 15:54:40 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isascii(int n)
 {
@@ -18,14 +20,9 @@ int	ft_isascii(int n)
 		return (0);
 }
 
-/*#include <ctype.h>
-#include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 int	main(int ac, char **av)
 {
 	printf("la valeur final est : %d\n", isascii(av[1][0]));
 	printf("la valeur finale de la fonction ft : %d", ft_isascii(av[1][0]));
-}*/
+}

@@ -5,17 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 11:35:02 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/22 11:58:27 by amzaidi          ###   ########.fr       */
+/*   Created: 2024/04/26 14:42:53 by amzaidi           #+#    #+#             */
+/*   Updated: 2024/04/26 15:25:38 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	char *str;
-	size_t i;
+	char	*str;
+	size_t	i;
 
 	i = 0;
 	str = s;
@@ -27,9 +27,6 @@ void	ft_bzero(void *s, size_t n)
 	//return s;
 }
 
-#include <stdio.h>
-#include <stdlib.h>
-
 int main() {
 
     char array [] = { 'a', 'b', 'c', 'd', 'e' };
@@ -37,21 +34,16 @@ int main() {
 
     int length;
 
-    /* Display the initial values */
     for( length=0; length<5; length++) {
         printf( "%c ", array[ length ] );
     }
     printf( "\n" );
 
-    /* Reset the memory bloc */
     ft_bzero( array, size);
-
-    /* Display the new values */
     for( length=0; length<5; length++) {
         printf( "%c ", array[ length ] );
     }
     printf( "\n" );
-
     return 0;
 }
 

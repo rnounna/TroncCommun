@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/25 14:34:44 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/25 14:53:19 by amzaidi          ###   ########.fr       */
+/*   Created: 2024/04/26 14:53:34 by amzaidi           #+#    #+#             */
+/*   Updated: 2024/04/26 18:57:33 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,16 @@ char	*ft_strdup(char *src)
 	char	*dest;
 	int		i;
 
-	i = ft_strlenn(src);
+	i = ft_strlen(src);
 	dest = malloc(sizeof * dest * (i + 1));
-	ft_strlcpy(dest, src,i + 1);
+	ft_strlcpy(dest, src, i + 1);
 	return (dest);
 }
-
+/*
 int	main()
 {
 	char *dest;
-	dest = ft_strdup("amine est bete");
+	char *src = "amine exst bete";
+	dest = ft_strdup(src);
 	printf("%s",dest);
-}
+}*/
