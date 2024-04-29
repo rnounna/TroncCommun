@@ -17,26 +17,20 @@ char    *ft_strnstr(const char *str, const char *to_find, size_t len)
 {
         int     i;
         int     j;
-	size_t	compteur;
+
         j = 0;
         i = 0;
-	compteur = 0;
-        if (to_find[0] == '\0')
-                return ((char*)str);
-	if (len == 0)
-		return NULL;
-        while (str[i] && compteur < len)
+        if (!str || !to_find)
+        	return (NULL);
+    	if (ft_strlen(to_find) == 0)
+        	return ((char *) str);
+        while (str[i] && i + j <= len)
         {
-                if(str[j + i] && to_find[j] && str[i + j] == to_find[j])
-                {
-                        j++;
-			compteur++;
-                }
-                if (compteur <= len && to_find[j] == '\0')
-                {
-			return ((char *)str + i);
-                }
                 j = 0;
+                while(str[i+j] && str[i++] == to_find[j++] && i <= len);
+                if (j == ft_strlen(to_find) + 1)
+                        return ((char *)str + (i - j));
+                i -= j;
                 i++;
         }
         return (NULL);
