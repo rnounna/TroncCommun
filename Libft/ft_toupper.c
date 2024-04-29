@@ -6,7 +6,7 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 14:54:56 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/26 15:49:55 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/04/28 20:26:36 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int	ft_toupper(int c)
 		return (c - 32);
 	return (c);
 }
-
+/*
 int	main()
 {
 	printf("%c",ft_toupper('a'));
 }
-
+*/

@@ -6,29 +6,55 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 14:50:02 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/26 19:08:11 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/04/29 00:16:13 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	j;
+	size_t	i;
+	size_t	j;
 
+	if(!dest || !src)
+		return (0);
 	j = 0;
 	i = 0;
 	while (src[j])
 		j++;
-	while (src[i] && i < size - 1)
+	if(size !=0 )
 	{
-		if (size > i)
+		while (src[i] && i < size - 1)
+		{
 			dest[i] = src[i];
-		i++;
+			i++;
+		}
+		dest[i] = '\0';
 	}
-	dest[i] = '\0';
 	return (j);
+}
+
+/*
+size_t    ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+    size_t srcsize;
+    size_t i;
+
+    if (!dst || !src)
+        return (0);
+    srcsize = ft_strlen(src);
+    i = 0;
+    if (dstsize != 0)
+    {
+        while (src[i] != '\0' && i < (dstsize - 1))
+        {
+            dst[i] = src[i];
+            i++;
+        }
+        dst[i] = '\0';
+    }
+    return (srcsize);
 }
 
 int main() {
@@ -39,6 +65,7 @@ int main() {
 
     size = ft_strlen(src) + 1;
     dest = (char *) malloc(size);
-    ft_strlcpy(dest, src,size);
+    ft_strlcpy(dest, src,2);
     printf("your name is : %s",dest);
 }
+*/

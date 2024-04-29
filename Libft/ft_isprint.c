@@ -6,7 +6,7 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 14:50:50 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/26 15:57:14 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/04/28 20:25:21 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	ft_isprint(int n)
 	else
 		return (0);
 }
-
+/*
 int	main()
 {
 	printf("la valeur final est : %d\n", isprint(5));
 	printf("la valeur finale de la fonction ft : %d", ft_isprint(5));
-}
+}*/

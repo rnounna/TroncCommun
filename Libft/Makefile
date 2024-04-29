@@ -16,6 +16,11 @@ SRCS = ft_bzero.c\
       ft_toupper.c\
       ft_strdup.c\
       ft_strchr.c\
+      ft_strrchr.c\
+      ft_strncmp.c\
+      ft_memchr.c\
+      ft_memcmp.c\
+      ft_strnstr.c\
 
 CC = cc
 RM = rm -f

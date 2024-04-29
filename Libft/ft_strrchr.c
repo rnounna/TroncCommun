@@ -5,32 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/26 19:00:33 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/26 19:07:32 by amzaidi          ###   ########.fr       */
+/*   Created: 2024/04/28 20:10:41 by amzaidi           #+#    #+#             */
+/*   Updated: 2024/04/28 20:21:01 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-char	ft_strrchr(const char*s,int c)
+char	*ft_strrchr(const char *string, char search)
 {
 	int	i;
 
-	i = ft_strlen();
+	i = ft_strlen(string);
+	while (i >= 0)
+	{
+		if (string[i] == search)
+			return ((char *)(string + i));
+		i--;
+	}
+	return (NULL);
 }
 
+/*
 int main() {
-    char *phrase = "Bonjour, comment ça va aujourd'hui ?";
-    char *last_a = strrchr(phrase, 'a');
-    char *test;
-    strrchr()
-    printf()
-    if (last_a != NULL) {
-        printf("La dernière lettre 'a' se trouve à la position : %ld\n", last_a - phrase);
-    } else {
-        printf("Pas de lettre 'a' trouvée.\n");
-    }
-    
+    const char *phrase = "Bonjour, commient ça va aujourd'hui ?";
+    char *test = ft_strrchr(phrase,'i');
+    printf("%s\n%s",phrase,test);
     return 0;
 }
+*/

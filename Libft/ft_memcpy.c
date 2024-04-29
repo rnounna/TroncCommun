@@ -6,7 +6,7 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 14:53:08 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/26 15:55:35 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/04/29 01:52:18 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	*ft_memcpy(void *destination, const void *source, size_t size)
 	return (destination);
 }
 
-
+/*
 int main() {
 
     int array [] = { 54, 85, 20, 63, 21 };
@@ -43,4 +43,4 @@ int main() {
     free( copy );
 
     return EXIT_SUCCESS;
-}
+}*/

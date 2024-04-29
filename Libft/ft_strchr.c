@@ -6,7 +6,7 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 14:51:14 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/26 16:47:49 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/04/29 00:47:22 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,30 @@
 char	*ft_strchr(const char *string, int searchedChar)
 {
 	int	i;
-	char *retour;
-	//retour = ft_strdup(string[j]);
+
+	if(!string)
+		return (NULL);
 	i = 0;
-	//retour = ft_strdup((char*)string);
-	while (string[i++])
+	while (string[i])
 	{
 		if (string[i] == searchedChar)
-			break;
+			return ((char *)string + i);
+		i++;
 	}
-	retour = ft_strdup((char*)string + i);
-	return (retour);
+	if(string[i] == searchedChar)
+		return ((char*)string + i);
+	return (0);
 }
-
-int	main()
+/*
+int main(void)
 {
-	char	*tweet = "Th@is is my mention";
-	char *dest = ft_strchr(tweet,'i');
-	printf("%s\n",tweet);
-	printf("%s",dest);
+        char    const *test = "a b c";
+        char    *dest = ft_strchr(test, 0);
+        if (dest == NULL)
+        {
+                printf("strchr returned NULL\n");
+                return 1;
+        }
+        printf("strchr(\"%s\", '\\0') returned %s\n", test, dest);
 }
+*/

@@ -6,7 +6,7 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 14:42:53 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/26 15:25:38 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/04/28 20:23:13 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_bzero(void *s, size_t n)
 	}
 	//return s;
 }
-
+/*
 int main() {
 
     char array [] = { 'a', 'b', 'c', 'd', 'e' };
@@ -46,4 +46,4 @@ int main() {
     printf( "\n" );
     return 0;
 }
-
+*/
