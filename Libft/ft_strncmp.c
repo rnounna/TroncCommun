@@ -6,7 +6,7 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 00:49:35 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/29 01:26:12 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/04/30 16:42:47 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int ft_strncmp( const char * first, const char * second, size_t length )
 		i++;
 	return (first[i] - second[i]);
 }
-
 
 /*
 #include <stdio.h>

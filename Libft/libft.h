@@ -6,7 +6,7 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 10:29:33 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/29 03:39:05 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/04/30 16:28:06 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,21 @@ int		ft_tolower(int c);
 char		*ft_strchr(const char *string, int searchedChar);
 char    *ft_strchr(const char *string, int searchedChar);
 void    *ft_memchr( const void * memoryBlock, int searchedChar, size_t size );
-int memcmp( const void * pointer1, const void * pointer2, size_t size );
+int ft_memcmp( const void * pointer1, const void * pointer2, size_t size );
 char *ft_strnstr(const char *src, const char *to_find, size_t len);
+int     ft_atoi(const char *str);
+void * ft_calloc( size_t elementCount, size_t elementSize);
+char *ft_substr(char const *source, unsigned int start,size_t len);
+char *ft_strjoin(char const *s1, char const *s2);
+char *ft_strtrim(char const *s1, char const *set);
+char **ft_split(char const *s, char c);
+char *ft_itoa(int n);
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void ft_striteri(char *s, void (*f)(unsigned int,char*));
+void ft_putchar_fd(char c, int fd);
+void ft_putstr_fd(char *s, int fd);
+void ft_putendl_fd(char *s, int fd);
+void ft_putnbr_fd(int n, int fd);
+char    *ft_strrchr(const char *string, char search);
 
 #endif
