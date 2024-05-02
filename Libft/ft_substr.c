@@ -6,7 +6,7 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 11:59:26 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/30 14:43:53 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/05/02 14:36:06 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ char *ft_substr(char const *source, unsigned int start,size_t len)
 	//dest = (char *) malloc( sizeof(*source) * (len + 1));
 	i = 0;
 	j = 0;
-	dest = "";
+	dest = NULL;
+	if (start >= len)
+		return (ft_strdup(""));
 	if (!source)
 		return (dest);
-	if (start > ft_strlen(source))
+	if (start >= ft_strlen(source))
 		return(dest);
 	if (len > start + ft_strlen(source))
 		len = ft_strlen(source);

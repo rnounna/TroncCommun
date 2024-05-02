@@ -6,7 +6,7 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 14:50:02 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/30 12:23:08 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/05/02 18:02:14 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,8 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 
 	if(!src)
 		return (0);
-	j = 0;
+	j = ft_strlen(src);
 	i = 0;
-	while (src[j])
-		j++;
 	if(size !=0 )
 	{
 		while (src[i] && i < size - 1)
