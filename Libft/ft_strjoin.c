@@ -6,7 +6,7 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 14:52:38 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/30 19:03:53 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/05/02 19:15:27 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ char *ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	j = 0;
 	//size_t i = 50;
-	if(!s1)
-		return (char*)s2;
+	if (!s1 && !s2)
+		return (ft_strdup(""));
+	if (!s1)
+		return (ft_strdup((char*)s2));
 	if(!s2)
-		return(char*)s1;
+		return (ft_strdup((char*)s1));
 	int lens1 = ft_strlen(s1);
 	int lens2 = ft_strlen(s2);
 	dest = (char *)malloc(sizeof(char) * (lens1 + lens2)+1);
