@@ -6,7 +6,7 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 10:49:57 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/05/03 19:07:37 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/05/03 19:36:56 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,77 +35,60 @@ int	count_words(char *string,char c)
 	return words_number;
 }
 
-static int      tochar(char *s,char c, int start) // compte jusquau char c specifier ;
-{
-        int     i;
-        int     j = 0;
-        i = 0;
-        while (s[i] == c)
-          i++;
-        while (s[i] != c)
-        {
-          j++;
-          i++;
-	  if(s[i] == '\0')
-	  	break;
-        }
-        return j + start;
-}
+/*Fonction split(chaîne, délimiteur)
+    Créer une liste vide de sous-chaînes
+    Créer une sous-chaîne temporaire vide
 
-static int      nextword(char *s,char c) // compte jusquau char c specifier ;
-{
-        int     i;
-        int     j = 0;
-        i = 0;
-        while (s[i] == c)
-          i++;
-        return i;
-}
+    Pour chaque caractère dans la chaîne
+        Si le caractère n'est pas un délimiteur
+            Ajouter le caractère à la sous-chaîne temporaire
+        Sinon
+            Ajouter la sous-chaîne temporaire à la liste de sous-chaînes
+            Réinitialiser la sous-chaîne temporaire à une chaîne vide
 
+    Ajouter la dernière sous-chaîne temporaire à la liste de sous-chaînes
 
-
-/*
-char **ft_split(char const *s, char c)
-{
-	char	**retour;
-	int	i;
-	int	wordnumber;
-
-	wordnumber= count_word(s,c);
-	i = 0;
-	retour = (char **)malloc * (sizeof(char*) * wordnumber);
-	while(wordnumber)
-	{
-		i = tochar()
-		wordnumber--;
-	}
-
-}
+    Retourner la liste de sous-chaînes
+Fin de la fonction
 */
 
-int	main()
+char	*ft_strcpy(char *dest, char *src)
 {
-	char **split;
-	int	start = 0;
-	int	end = 0;
-	char c = '-';
-	int	inword = 0;
-	char *str = "i-----AmineAmine-A4545mine-Amine";
-	int wordnumber = count_words(str,c);
-	while(wordnumber)
+	int	i;
+
+	i = 0;
+	while (src[i])
 	{
-		inword = 1;
-		while(str[i] && inword)
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+
+char **ft_split(char const *s, char c)
+{
+	char	**split;
+	char	*tempon;
+	int	i;
+	int	o;
+	int	nombre_mots;
+
+	nombre_mots = count_words(*s,c);
+	i = 0;
+	while (nombre_mots)
+	{
+		while(s[i])
 		{
-			while (str[inword] != c)
+			if()
 			{
-				// on copie
+				s[i] = tempon[o];
+				i++;
+				o++;
 			}
+			i++;
 		}
-		while(str[i] && !inword)
-		{
-			
-		}
-		wordnumber--;
-        }
+		nombre_mots;
+	}
 }
