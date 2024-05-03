@@ -6,7 +6,7 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 02:27:21 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/29 02:41:38 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/05/03 20:07:36 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,14 @@
 
 int ft_memcmp( const void * pointer1, const void * pointer2, size_t size )
 {
-	return ft_strncmp( (const char *) pointer1, (const char *) pointer2, size );
+	size_t  i;
+
+	i = 0;
+        if(size == 0)
+                return (0);
+        while (((unsigned char *)pointer1)[i] == ((unsigned char *)pointer2)[i] && (size - 1) >  i && ((unsigned char *)pointer1)[i] != 0)
+                i++;
+        return (((unsigned char *)pointer1)[i] - ((unsigned char *)pointer2)[i]);
 }
 /*
 int main() {

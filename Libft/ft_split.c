@@ -6,7 +6,7 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 10:49:57 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/05/03 19:36:56 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/05/03 19:50:29 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,21 +74,23 @@ char **ft_split(char const *s, char c)
 	int	i;
 	int	o;
 	int	nombre_mots;
+	int	index_word;
 
 	nombre_mots = count_words(*s,c);
 	i = 0;
+	index_word = 0;
 	while (nombre_mots)
 	{
 		while(s[i])
 		{
-			if()
+			while(s[i] != c)
 			{
-				s[i] = tempon[o];
+				split[index_word][i] = s[i];
 				i++;
-				o++;
 			}
 			i++;
 		}
-		nombre_mots;
+		nombre_mots--;
+		index_word++;
 	}
 }
