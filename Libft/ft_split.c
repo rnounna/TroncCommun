@@ -6,13 +6,13 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 10:49:57 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/05/03 19:50:29 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/05/04 17:04:33 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_words(char *string,char c)
+static	int	count_words(char const *string, char c)
 {
 	int	i;
 	int	words_number;
@@ -21,76 +21,64 @@ int	count_words(char *string,char c)
 	inside_word = 0;
 	words_number = 0;
 	i = 0;
-	while(string[i])
+	while (string[i])
 	{
-		if(string[i]!= c && !inside_word)
+		if (string[i] != c && !inside_word)
 		{
 			inside_word = 1;
 			words_number++;
 		}
-		else if(inside_word && string[i] == c)
+		else if (inside_word && string[i] == c)
 			inside_word = 0;
 		i++;
 	}
-	return words_number;
+	return (words_number);
 }
 
-/*Fonction split(chaîne, délimiteur)
-    Créer une liste vide de sous-chaînes
-    Créer une sous-chaîne temporaire vide
-
-    Pour chaque caractère dans la chaîne
-        Si le caractère n'est pas un délimiteur
-            Ajouter le caractère à la sous-chaîne temporaire
-        Sinon
-            Ajouter la sous-chaîne temporaire à la liste de sous-chaînes
-            Réinitialiser la sous-chaîne temporaire à une chaîne vide
-
-    Ajouter la dernière sous-chaîne temporaire à la liste de sous-chaînes
-
-    Retourner la liste de sous-chaînes
-Fin de la fonction
-*/
-
-char	*ft_strcpy(char *dest, char *src)
+static	char	*ft_split_split(const char *src, int start, int end)
 {
-	int	i;
+	char	*dest;
+	int		i;
+	int		size;
 
+	size = end - start;
 	i = 0;
-	while (src[i])
+	dest = malloc(sizeof(char) * (size + 1));
+	if (!dest)
+		return (NULL);
+	while (i < size)
 	{
-		dest[i] = src[i];
-		i++;
+		dest[i++] = src[start++];
 	}
-	dest[i] = '\0';
+	dest[i] = 0;
 	return (dest);
 }
 
-
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**split;
-	char	*tempon;
-	int	i;
-	int	o;
-	int	nombre_mots;
-	int	index_word;
+	int		i;
+	int		start;
+	int		end;
+	int		nombre_mots;
 
-	nombre_mots = count_words(*s,c);
 	i = 0;
-	index_word = 0;
-	while (nombre_mots)
+	start = 0;
+	nombre_mots = count_words(s, c);
+	split = malloc(sizeof(char *) * (nombre_mots + 1));
+	if (!split)
+		return (NULL);
+	while (i < nombre_mots)
 	{
-		while(s[i])
-		{
-			while(s[i] != c)
-			{
-				split[index_word][i] = s[i];
-				i++;
-			}
-			i++;
-		}
-		nombre_mots--;
-		index_word++;
+		while (s[start] == c && s[start])
+			start++;
+		end = start + 1;
+		while (s[end] != c && s[end])
+			end++;
+		split[i] = ft_split_split(s, start, end);
+		start = end + 1;
+		i++;
 	}
+	split[i] = NULL;
+	return (split);
 }

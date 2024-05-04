@@ -6,7 +6,7 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 14:51:14 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/05/03 19:55:01 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/05/04 18:39:40 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,14 @@ char	*ft_strchr(const char *string, int searchedChar)
 {
 	int	i;
 
-	if(!string)
-		return (NULL);
 	i = 0;
-	while (string[i])
+	while ((string[i] != (char)searchedChar) && (string[i] != '\0'))
 	{
-		if (string[i] == searchedChar)
-			return ((char *)string + i);
 		i++;
 	}
-	if(string[i] == searchedChar)
-		return ((char*)string + i);
-	return (0);
+	if (string[i] == (char)searchedChar)
+		return (char *)string + i;
+	return (NULL);
 }
 /*
 int main(void)

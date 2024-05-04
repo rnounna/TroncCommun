@@ -6,7 +6,7 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 10:29:33 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/30 16:28:06 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/05/04 18:36:42 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 int	ft_strncmp( const char * first, const char * second, size_t length );
 char		*ft_strdup(char *src);
 size_t	ft_strlen(const char *s);
-size_t	ft_strlcat(char *dest, char *src, size_t size);
+size_t	ft_strlcat(const char *dest, const char *src, size_t size);
 int		ft_isalpha(int n);
 int		ft_isdigit(int n);
 int		ft_isalnum(int c);
