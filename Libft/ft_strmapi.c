@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/28 20:10:41 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/05/06 18:17:03 by amzaidi          ###   ########.fr       */
+/*   Created: 2024/05/06 14:47:11 by amzaidi           #+#    #+#             */
+/*   Updated: 2024/05/06 18:41:42 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *string, int search)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
+	char	*dest;
 	int		i;
-	char	*str;
 
-	str = (char *)string;
-	i = ft_strlen(string);
-	while (i >= 0)
+	if (!s || !f)
+		return (NULL);
+	i = 0;
+	dest = ft_strdup((char *)s);
+	while (dest[i])
 	{
-		if (str[i] == (char)search)
-			return (str + i);
-		i--;
+		dest[i] = f(i, dest[i]);
+		i++;
 	}
-	return (NULL);
+	dest[i] = '\0';
+	return (dest);
 }

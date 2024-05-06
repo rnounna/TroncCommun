@@ -6,38 +6,29 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 14:52:38 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/05/02 19:15:27 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/05/06 11:19:41 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*dest;
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
-	//size_t i = 50;
-	if (!s1 && !s2)
-		return (ft_strdup(""));
-	if (!s1)
-		return (ft_strdup((char*)s2));
-	if(!s2)
-		return (ft_strdup((char*)s1));
-	int lens1 = ft_strlen(s1);
-	int lens2 = ft_strlen(s2);
-	dest = (char *)malloc(sizeof(char) * (lens1 + lens2)+1);
-	if(!dest)
-		return NULL;
-	while(s1[i])
+	dest = (char *)malloc((ft_strlen(s1) + ft_strlen(s2)) + 1);
+	if (!dest)
+		return (NULL);
+	while (s1[i])
 	{
 		dest[i] = s1[i];
 		i++;
 	}
-	while(s2[j])
+	while (s2[j])
 	{
 		dest[i] = s2[j];
 		i++;
@@ -46,9 +37,3 @@ char *ft_strjoin(char const *s1, char const *s2)
 	dest[i] = '\0';
 	return (dest);
 }
-/*
-int	main()
-{
-	char *dest = ft_strjoin("amine   ","zaidi");
-	printf("%s",dest);
-}*/

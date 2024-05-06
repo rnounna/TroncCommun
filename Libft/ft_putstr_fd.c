@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/28 20:10:41 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/05/06 18:17:03 by amzaidi          ###   ########.fr       */
+/*   Created: 2024/05/06 16:35:01 by amzaidi           #+#    #+#             */
+/*   Updated: 2024/05/06 16:39:05 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *string, int search)
+void	ft_putstr_fd(char *s, int fd)
 {
-	int		i;
-	char	*str;
+	int	i;
 
-	str = (char *)string;
-	i = ft_strlen(string);
-	while (i >= 0)
+	i = 0;
+	while (s[i])
 	{
-		if (str[i] == (char)search)
-			return (str + i);
-		i--;
+		ft_putchar_fd(s[i], fd);
+		i++;
 	}
-	return (NULL);
 }

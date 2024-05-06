@@ -6,7 +6,7 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 14:54:28 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/28 23:37:00 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/05/06 10:29:26 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,19 @@ void	*ft_memmove(void *dest, const void *source, size_t size)
 {
 	size_t			i;
 	size_t			j;
+
 	i = 0;
 	j = 0;
-	if(!dest && !source)
+	if (!dest && !source)
 		return (NULL);
-	if(dest > source)
+	if (dest > source)
 	{
 		while (size--)
 			((char *)dest)[size] = ((char *)source)[size];
 	}
 	else
-		ft_memcpy(dest,source,size);
-return (dest);
+		ft_memcpy(dest, source, size);
+	return (dest);
 }
 /*
 void    *ft_memmove(void *dest, const void *source, size_t size)
@@ -37,8 +38,8 @@ void    *ft_memmove(void *dest, const void *source, size_t size)
 
     if (src < dst)
     {
-        // Si la destination est après le début de la source,
-        // copiez de droite à gauche pour éviter de remplacer des données non copiées.
+        // Si la destination est après le début de la source,        
+	// // copiez de droite à gauche pour éviter de remplacer des donn
         for (size_t i = size; i != 0; --i)
         {
             dst[i - 1] = src[i - 1];

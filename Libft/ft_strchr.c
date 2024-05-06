@@ -6,7 +6,7 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 14:51:14 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/05/04 18:39:40 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/05/06 10:55:26 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strchr(const char *string, int searchedChar)
 		i++;
 	}
 	if (string[i] == (char)searchedChar)
-		return (char *)string + i;
+		return ((char *)string + i);
 	return (NULL);
 }
 /*

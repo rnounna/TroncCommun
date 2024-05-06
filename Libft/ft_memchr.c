@@ -6,39 +6,24 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 01:37:13 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/29 02:23:42 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/05/06 10:27:41 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*void *ft_memchr(const void *memoryBlock, int searchedChar, size_t size)
+void	*ft_memchr(const void *memoryBlock, int searchedChar, size_t size)
 {
-    const unsigned char *ptr = memoryBlock; // Convertit le pointeur en pointeur de caractères non signés
+	size_t	i;
 
-    // Parcours du bloc de mémoire
-    for (size_t i = 0; i < size; i++) {
-        // Si le caractère recherché est trouvé, retourne un pointeur vers cette position dans le bloc de mémoire
-        if (ptr[i] == searchedChar)
-            return (void *)(ptr + i);
-    }
-
-    // Si le caractère recherché n'est pas trouvé, retourne NULL
-    return NULL;
-}
-*/
-void	*ft_memchr( const void * memoryBlock, int searchedChar, size_t size )
-{
-	size_t i;
-	
 	i = 0;
-	while(i < size)
+	while (i < size)
 	{
-		if(((const char *)memoryBlock)[i] == (unsigned char)searchedChar)
+		if (((const char *)memoryBlock)[i] == (unsigned char)searchedChar)
 			return ((void *)memoryBlock + i);
 		i++;
 	}
-	return NULL;
+	return (NULL);
 }
 /*
 #include <stdio.h>
@@ -53,7 +38,8 @@ int main() {
     const char *result = memchr(str, ch, 8);
     printf("%s\n",(void*)result);
     if (result != NULL) {
-        printf("Le caractère '%c' a été trouvé à l'index %ld dans la chaîne.\n", ch, result - str);
+        printf("Le caractère '%c' a été trouvé 
+	à l'index %ld dans la chaîne.\n", ch, result - str);
     } else {
         printf("Le caractère '%c' n'a pas été trouvé dans la chaîne.\n", ch);
     }

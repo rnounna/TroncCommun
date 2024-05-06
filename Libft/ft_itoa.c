@@ -5,64 +5,63 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/04 11:10:24 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/05/04 18:59:42 by amzaidi          ###   ########.fr       */
+/*   Created: 2024/05/06 12:57:31 by amzaidi           #+#    #+#             */
+/*   Updated: 2024/05/06 14:43:42 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	couneterInt(int nb)
+int	couneterint(int nb)
 {
-	int	count = 1;
-	if(nb < 0)
+	int	count;
+
+	count = 1;
+	if (nb < 0)
+	{
 		nb = -nb;
-	while((nb / 10) != 0)
+		count++;
+	}
+	while ((nb / 10) != 0)
 	{
 		nb = nb / 10;
-		count ++;
+		count++;
 	}
-	return	count;
+	return (count);
 }
 
-void	wr_number(char c)
+char	*ft_itoa(int n)
 {
-	c = c + 48;
-	write(1, &c, 1);
-}
-
-char	*ft_putnbr(int nb)
-{
+	int		unitynumber;
+	int		c;
 	char	*rendu;
-	if (nb == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return rendu;
-	}
-	else if (nb < 0)
-	{
-		write(1, "-", 1);
-		nb = -nb;
-	}
-	if (nb == 2147483647)
-	{
-		write(1, "2147483647", 10);
-		return rendu;
-	}
-	else if (nb >= 10)
-		ft_putnbr(nb / 10);
-	wr_number(rendu % 10);
-	return rendu;
-}
 
-char *ft_itoa(int n)
-{
-	char	rendu = malloc(sizeof(char)) * (couneterInt(n) + 1);
-			
-	rendu = ft_putnbr(n);
+	unitynumber = couneterint(n);
+	c = unitynumber;
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	rendu = malloc((sizeof(char)) * (unitynumber + 1));
+	if (!rendu)
+		return (NULL);
+	rendu[unitynumber] = '\0';
+	if (n < 0)
+	{
+		n = -n;
+		c = c - 1;
+		rendu[0] = '-';
+	}
+	while (c)
+	{
+		rendu[unitynumber-- - 1] = (n % 10) + 48;
+		n = n / 10;
+		c--;
+	}
+	return (rendu);
 }
-
+/*
 int	main()
 {
-	ft_itoa(10);	
+	char *dest;
+	printf("%s",ft_itoa(-2147483648));
 }
+*/
