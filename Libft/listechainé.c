@@ -55,9 +55,12 @@ void ft_lstadd_front(t_list **lst, t_list *new)
 
 t_list *ft_lstlast(t_list *lst)
 {
-	while (lst -> next != NULL)
+	t_list  *last;
+
+	*last = *lst;
+	while (last -> next != NULL)
 	{
-		lst -> next = lst;
+		last = last -> next;
 	}
 	return lst;
 	
