@@ -6,13 +6,13 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:57:31 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/05/06 14:43:42 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/05/10 01:31:19 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	couneterint(int nb)
+static int	couneterint(int nb)
 {
 	int	count;
 

@@ -6,7 +6,7 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 14:54:09 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/28 23:28:28 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/05/10 00:50:59 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,3 @@ int	ft_isascii(int n)
 	else
 		return (0);
 }
-
-/*
-int	main(int ac, char **av)
-{
-	printf("la valeur final est : %d\n", isascii(av[1][0]));
-	printf("la valeur finale de la fonction ft : %d", ft_isascii(av[1][0]));
-}*/

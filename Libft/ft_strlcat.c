@@ -6,13 +6,13 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 14:54:42 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/05/06 10:34:07 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/05/10 01:05:30 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(const char *dest, const char *src, size_t size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	j;
@@ -36,12 +36,3 @@ size_t	ft_strlcat(const char *dest, const char *src, size_t size)
 	((char *)dest)[j] = '\0';
 	return (dlen + slen);
 }
-/*
-int main (void)
-{
-	char src[] = "Born to code";
-	char dest [100] = "1337 42";
-	printf("%i \n", ft_strlcat(dest, src,8 ));
-	printf("%s \n", dest);
-}
-*/

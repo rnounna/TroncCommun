@@ -6,7 +6,7 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 14:51:28 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/05/06 10:31:34 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/05/10 00:53:10 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,3 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-/*
-int	main()
-{
-	printf("%zu",ft_strlen("ammine"));
-}*/

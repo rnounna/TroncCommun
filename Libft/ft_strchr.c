@@ -6,7 +6,7 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 14:51:14 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/05/06 10:55:26 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/05/10 01:09:11 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,3 @@ char	*ft_strchr(const char *string, int searchedChar)
 		return ((char *)string + i);
 	return (NULL);
 }
-/*
-int main(void)
-{
-        char    const *test = "a b c";
-        char    *dest = ft_strchr(test, ' ');
-        if (dest == NULL)
-        {
-                printf("strchr returned NULL\n");
-                return 1;
-        }
-        printf("strchr(\"%s\", '\\0') returned %s\n", test, dest);
-}*/

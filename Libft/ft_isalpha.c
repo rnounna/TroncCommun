@@ -6,7 +6,7 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 14:52:42 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/04/28 20:24:55 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/05/10 00:45:55 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,3 @@ int	ft_isalpha(int n)
 	else
 		return (0);
 }
-/*
-int	main(int ac, char **av)
-{
-	(void) ac;
-	printf("la valeur final est : %d\n", isalpha(av[1][0]));
-	printf("la valeur finale de la fonction ft : %d", ft_isalpha(av[1][0]));
-}*/

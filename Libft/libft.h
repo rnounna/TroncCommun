@@ -6,7 +6,7 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 10:29:33 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/05/06 18:16:12 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/05/10 02:16:42 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,15 @@
 # include <ctype.h>
 # include <stddef.h>
 
-int		ft_strncmp( const char *first, const char *second, size_t length );
-char	*ft_strdup(char *src);
+typedef struct	s_list
+{
+	void	*content;
+	struct	s_list *next;
+} t_list;
+int	ft_strncmp(const char *first, const char *second, size_t length );
+char	*ft_strdup(const char *src);
 size_t	ft_strlen(const char *s);
-size_t	ft_strlcat(const char *dest, const char *src, size_t size);
+size_t	ft_strlcat(char *dest, const char *src, size_t size);
 int		ft_isalpha(int n);
 int		ft_isdigit(int n);
 int		ft_isalnum(int c);
@@ -55,5 +60,14 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	*ft_strrchr(const char *string, int search);
+t_list	*ft_lstnew(void *content);
+void ft_lstadd_front(t_list **lst, t_list *new);
+int ft_lstsize(t_list *lst);
+t_list *ft_lstlast(t_list *lst);
+void ft_lstadd_back(t_list **lst, t_list *new);
+void ft_lstdelone(t_list *lst, void (*del)(void*));
+void ft_lstclear(t_list **lst, void (*del)(void*));
+void ft_lstiter(t_list *lst, void (*f)(void *));
+
 
 #endif

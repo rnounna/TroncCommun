@@ -6,7 +6,7 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 14:42:53 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/05/06 10:25:26 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/05/10 00:54:53 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,24 +24,3 @@ void	ft_bzero(void *s, size_t n)
 		str[i++] = '\0';
 	}
 }
-/*
-int main() {
-
-    char array [] = { 'a', 'b', 'c', 'd', 'e' };
-    int size = sizeof( int ) * 2;
-
-    int length;
-
-    for( length=0; length<5; length++) {
-        printf( "%c ", array[ length ] );
-    }
-    printf( "\n" );
-
-    ft_bzero( array, size);
-    for( length=0; length<5; length++) {
-        printf( "%c ", array[ length ] );
-    }
-    printf( "\n" );
-    return 0;
-}
-*/
