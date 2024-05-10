@@ -6,7 +6,7 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 20:20:12 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/05/10 02:43:04 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/05/10 04:37:26 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,10 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	
+	if (lst)
+	{
+		while (lst->next != NULL)
+			lst = lst->next;
+	}
+	return (lst);
 }

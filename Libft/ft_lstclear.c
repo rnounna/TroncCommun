@@ -6,7 +6,7 @@
 /*   By: amzaidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 23:01:36 by amzaidi           #+#    #+#             */
-/*   Updated: 2024/05/10 02:18:39 by amzaidi          ###   ########.fr       */
+/*   Updated: 2024/05/10 04:53:12 by amzaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*temps;
-
-	while (lst != NULL && del)
+	
+	temps = *lst;
+	while (*lst != NULL && del)
 	{
-		temps = (*lst)->next;
-		ft_lstdelone((*lst), del);
-		*lst = temps;
+		temps = temps->next;
+		del(temps->content);
+		free(temps);
 	}
-	*lst = NULL;
+	temps = NULL;
 }
