@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libftprintf.h"
+
 int    ft_lenex(unsigned    int num)
 {
     int    len;
