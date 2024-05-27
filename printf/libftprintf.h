@@ -22,6 +22,6 @@ int ft_printhex(unsigned int n,int majormin,int adresse_ou_non);
 int ft_printf(const char *src, ...);
 int ft_print_number_unsigned(unsigned int n);
 int ft_putstr(char *str);
-int ft_putchar(char *str);
+int ft_putchar(char str);
 
 #endif
