@@ -12,96 +12,135 @@
 
 #include "get_next_line.h"
 
-int	ft_ret_value(int ret, int fd, char *buf)
+char	*ft_free(char *buffer, char *buf)
 {
-	ret = read(fd, buf, BUFFER_SIZE);
-	buf[ret] = 0;
-	return (ret);
-}
+	char	*line;
+	line = ft_strjoin(buffer,buf);
+	free(buffer);
+	return line;
+}	
 
-int	ft_check_return(int ret, char **str)
+char	*get_next(char *buffer)
 {
-	if (ret == 0 && (*str)[0] == 0)
-	{
-		free(*str);
-		*str = NULL;
-		return (0);
-	}
-	return (1);
-}
-
-int	ft_ckeck_error(int fd, char **line)
-{
-	if ((fd < 0 || fd > 1023) || !line || BUFFER_SIZE <= 0)
-		return (-1);
-	return (1);
-}
-char	*ft_select(char *buf, int *ret)
-{
-	int	i;
-	char	*dest;
-
-	i = 0;
-	while(buf && buf[i] && buf[i] != '\n')
-		i++;
-	dest = malloc(i + 1);
-	if (!dest)
-		*ret = 1;
-	i = 0;
-	while (buf && buf[i] && buf[i] != '\n')
-	{
-		dest[i] = buf[i];
-		i++;
-	}
-	dest[i] = 0;
-	return (dest);
-}
-
-char	*ft_select2(char *buf)
-{
+	char	*new_buffer;
 	int	i;
 	int	j;
-	char	*dest;
 
-	i = 0;
-	while(buf && buf[i] && buf[i] != '\n')
-		i++;
-	dest = malloc(sizeof(*dest) * (ft_strlen(buf) - i + 1));
-	if (!dest)
-		return (NULL);
 	j = 0;
-	while(buf && buf[i])
-		dest[j++] = buf[++i];
-	dest[j] = 0;
-	return dest;
+	i = 0;
+	while(buffer[i] && buffer[i] != '\n')
+	{
+		i++;
+	}
+	if (!buffer[i])
+	{
+		free(buffer);
+		return (NULL);
+	}
+	new_buffer = malloc(sizeof(char) * (ft_strlen(buffer) - i + 1));
+	if(!new_buffer)
+		return NULL;
+	j = 0;
+	i++;
+	while(buffer[i])
+		new_buffer[j++] = buffer[i++];
+	new_buffer[j] = '\0';
+	free(buffer);
+	return (new_buffer);
+}
+
+char	*get_line(char *buffer)
+{
+	char	*line;
+	int	i;
+
+	line = NULL;
+	i = 0;
+	while(buffer[i] && buffer[i] != '\n')
+		i++;
+	line = malloc(sizeof(char) * (i + 2));
+	if (!line)
+		return NULL;
+	i = 0;
+	while(buffer[i] && buffer[i] != '\n')
+	{
+		line[i] = buffer[i];
+		i++;
+	}
+	if (buffer[i] && buffer[i] == '\n')
+		line[i++] = '\n';
+	line[i] = 0;
+	return (line);
+}
+
+char	*read_line(int fd, char *line)
+{
+	int	o;
+	char	*buffer;
+	o = 1;
+	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	while(o > 0)
+	{
+		if(o == -1)
+		{
+			free(buffer);
+			return (NULL);
+		}
+		o = read(fd, buffer, BUFFER_SIZE);
+		buffer[o] = '\0';
+		line = ft_free(line,buffer);
+		if(ft_strchr(buffer,'\n'))
+			break;
+	}
+	free(buffer);
+	return (line);
 }
 
 char	*get_next_line(int fd)
 {
-	char *line = NULL;
-	static char *str = NULL;
-	int	ret;
-	char buf[BUFFER_SIZE + 1];
-	char *temp;
-
-	ret = 1;
-	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 1023)
-		return (NULL); 
-	while (ret > 0)
-	{
-		ret = read(fd, buf, BUFFER_SIZE);
-		buf[ret] = 0;
-		temp = str;
-		str = ft_strjoin(temp, buf);
-		free(temp);
-		if (ft_strchr(str, '\n') == 1)
-			break;
-	}
-	line = ft_select(str,&ret);
-	temp = str;
-	str = ft_select2(temp);
-	free(temp);
-	if (ft_check_return(ret, &str) == 0 && line[0] == '\0')
-		return (NULL);
+	static char	*buffer;
+	char 		*line;
+	buffer = read_line(fd,buffer);
+	if (!buffer)
+		return NULL;
+	line = get_line(buffer);
+	buffer = get_next(buffer);
+	//line[ft_strlen(line)] = 0;
 	return (line);
 }
+/*
+int	main()
+{
+	int fd = open("fichier.txt", O_RDONLY);
+	if (fd == -1)
+		return 1;
+	char *line = get_next_line(fd);
+	printf("1 : ->%s<-\n",line);
+	free(line);
+	line = get_next_line(fd);
+        printf("2 : ->%s<-\n",line);
+	free(line);
+	line = get_next_line(fd);
+	printf("3 : ->%s<-\n",line);
+	free(line);
+	line = get_next_line(fd);
+	printf("4 : ->%s<-\n",line);
+	free(line);
+	line = get_next_line(fd);
+	printf("5 : ->%s<-\n",line);
+	free(line);
+	line = get_next_line(fd);
+	printf("6 : ->%s<-\n",line);
+	free(line);
+	line = get_next_line(fd);
+	printf("7 : ->%s<-\n",line);
+	free(line);
+	line = get_next_line(fd);
+	printf("8 : ->%s<-\n",line);
+	free(line);
+	line = get_next_line(fd);
+	printf("9 : ->%s<-\n",line);
+	free(line);
+	close(fd);
+	return 0;
+}*/
